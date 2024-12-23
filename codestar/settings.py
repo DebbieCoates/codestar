@@ -25,16 +25,6 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
-print(f"DATABASE_URL: {os.environ.get('DATABASE_URL')}")
-
-database_url = os.environ.get("DATABASE_URL")
-if isinstance(database_url, bytes):
-    database_url = database_url.decode('utf-8')
-
-DATABASES = {
-    'default': dj_database_url.parse(database_url)
-}
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
